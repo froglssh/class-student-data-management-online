@@ -21,6 +21,14 @@ input,textarea,select{font-family:inherit;font-size:13px}
 .side{width:262px;background:linear-gradient(180deg,#26375a,#1d2c49);color:#dce4f2;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;flex-shrink:0}
 .side h1{font-size:16px;margin:0;padding:18px 18px 4px;letter-spacing:.5px}
 .side .sub{font-size:11.5px;color:#9fb0cf;padding:0 18px 12px;border-bottom:1px solid rgba(255,255,255,.08)}
+.backup-launch-wrap{padding:12px 12px 4px}
+.backup-launch{width:100%;display:flex;align-items:center;gap:10px;text-align:left;padding:10px 12px;border:1px solid #fbbf24;border-radius:10px;background:linear-gradient(135deg,#fff4cc,#fcd979);color:#3d3215;box-shadow:0 3px 10px rgba(0,0,0,.2)}
+.backup-launch:hover{filter:brightness(1.04);transform:translateY(-1px)}
+.backup-launch .backup-icon{font-size:23px;line-height:1}
+.backup-launch .backup-copy{display:flex;flex-direction:column;line-height:1.35}
+.backup-launch .backup-copy strong{font-size:13px}
+.backup-launch .backup-copy small{font-size:10.5px;color:#66551f;margin-top:2px}
+.backup-launch .backup-arrow{margin-left:auto;font-size:22px;font-weight:700;color:#8a6a12}
 .classbox{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.08);font-size:12px}
 .classbox label{display:block;color:#9fb0cf;margin:6px 0 2px}
 .classbox input{width:100%;padding:6px 8px;border-radius:6px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff}
@@ -52,6 +60,8 @@ input,textarea,select{font-family:inherit;font-size:13px}
 .btn.pri:hover{background:var(--brand-d);color:#fff}
 .btn.gr{background:var(--accent);border-color:var(--accent);color:#fff}
 .btn.gr:hover{filter:brightness(.93)}
+.btn.db-save{background:#0e9488;border-color:#0e9488;color:#fff;box-shadow:0 2px 7px rgba(14,148,136,.24)}
+.btn.db-save:hover{background:#0b7c73;border-color:#0b7c73;color:#fff;transform:translateY(-1px)}
 .btn.sm{padding:4px 9px;font-size:11.5px}
 .btn.ghost{background:transparent;border-style:dashed;color:var(--muted)}
 .content{padding:20px;max-width:1180px;width:100%;margin:0 auto}
@@ -148,36 +158,17 @@ table.grid textarea{width:100%;border:none;background:transparent;padding:6px 7p
 .filedrop:hover{border-color:var(--brand);color:var(--brand)}
 .chiplist{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .chip{background:var(--chip);border:1px solid #d6e2f4;border-radius:20px;padding:3px 10px;font-size:11.5px}
+.backup-card{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:10px 0;background:#fff}
+.backup-card h4{margin:0 0 4px;font-size:14px;color:var(--brand)}
+.backup-meta{font-size:11.5px;color:var(--muted);line-height:1.7}
+.backup-students{margin:8px 0 0;padding:8px 10px;background:#f7f9fc;border-radius:7px;font-size:12px;max-height:112px;overflow:auto;line-height:1.8}
+.backup-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
 .note{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:8px;padding:9px 12px;font-size:12px;margin:10px 0}
 .ok{background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46;border-radius:8px;padding:9px 12px;font-size:12px;margin:10px 0}
 .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#1f2937;color:#fff;padding:10px 18px;border-radius:24px;font-size:13px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:200;opacity:0;transition:.25s;pointer-events:none}
 .toast.show{opacity:1;bottom:30px}
 .tag{display:inline-block;background:var(--chip);border:1px solid #d6e2f4;border-radius:6px;padding:1px 7px;font-size:11px;margin:1px 2px}
 kbd{background:#eef1f6;border:1px solid #d7dde7;border-bottom-width:2px;border-radius:5px;padding:0 5px;font-size:11px}
-/* readability scale: make the whole app easier to read on classroom projectors and laptops */
-body{font-size:16px}
-button,input,textarea,select{font-size:15px}
-.side h1{font-size:18px}
-.side .sub,.classbox,.roster .rtitle,.savestat,.hint,.note,.ok,.chip,.tag,kbd,.fld label,.draftft,.modal table,.steps{font-size:13px}
-.classbox input,.searchbox input,.stu .no,.stu .nm,.stu .pct,.side .foot button{font-size:14px}
-.topbar .title{font-size:18px}
-.topbar .title .badge{font-size:14px}
-.btn{font-size:15px;padding:8px 13px}
-.btn.sm{font-size:13px;padding:5px 10px}
-.shead .nmeta .nm{font-size:22px}
-.shead .nmeta .sub,.shead .semsel{font-size:14px}
-.card>h3{font-size:16px}
-.fld input,.fld textarea,.draftta{font-size:15px}
-.drafthd b{font-size:15px}
-table.grid th,table.grid td.semcell,.selfsem .semtag,.dutysel,.rowdel,.colmenu,.delfield{font-size:13px}
-.modal{max-width:920px}
-.modal h3{font-size:20px}
-.modal h3 .x{font-size:24px}
-.modal select,.modal input[type=text]{font-size:15px;padding:8px 10px}
-.modal table th,.modal table td{padding:9px 10px}
-.filedrop{font-size:15px}
-.filedrop div:first-child{font-size:17px!important}
-.modal .mfoot .btn{min-height:40px}
 /* print */
 @media print{
   @page{margin:10mm}
@@ -215,6 +206,13 @@ table.grid th,table.grid td.semcell,.selfsem .semtag,.dutysel,.rowdel,.colmenu,.
   <aside class="side">
     <h1>班級學生資料管理系統</h1>
     <div class="sub">臺北市麗山高中林獻升老師製作</div>
+    <div class="backup-launch-wrap">
+      <button class="backup-launch" onclick="openClassBackupLibrary()" aria-label="開啟班級備份庫，快速恢復之前的班級">
+        <span class="backup-icon">📚</span>
+        <span class="backup-copy"><strong>班級備份庫</strong><small>快速恢復之前的班級</small></span>
+        <span class="backup-arrow">›</span>
+      </button>
+    </div>
     <div class="classbox">
       <label>班級名稱</label><input id="m_class" placeholder="例：高二仁">
       <label>導師</label><input id="m_teacher" placeholder="請輸入導師姓名">
@@ -231,6 +229,7 @@ table.grid th,table.grid td.semcell,.selfsem .semtag,.dutysel,.rowdel,.colmenu,.
   <main class="main">
     <div class="topbar">
       <div class="title">📋 學生資料表 <span class="badge" id="countBadge">0 人</span> <span id="saveStat" class="savestat no-print"></span></div>
+      <button class="btn db-save" onclick="saveCurrentClassToBackup()" title="將目前班級最新資料更新到瀏覽器班級資料庫">💾 儲存到班級資料庫</button>
       <button class="btn" onclick="openAICfg()">⚙ AI 設定</button>
       <button class="btn" onclick="openImport()">📥 匯入</button>
       <button class="btn" onclick="openSectionPicker('print')">🖨 列印</button>
@@ -320,6 +319,9 @@ const DUTY_OPTIONS={
    3. 狀態管理 + localStorage
    ========================================================= */
 const LS_KEY='lssh_class_student_mgr_v1';
+const CLASS_BACKUPS_KEY='lssh_class_student_mgr_backups_v1';
+const EMPTY_STATE_KEY='lssh_class_student_mgr_explicit_empty_v1';
+const ACTIVE_BACKUP_KEY='lssh_class_student_mgr_active_backup_v1';
 let state = loadState();
 
 /* 基本資料欄位排序：父姓名→父手機→住家電話→母姓名→母手機（讓母欄對齊父欄） */
@@ -345,8 +347,27 @@ function blankState(){
           schema:structuredClone(DEFAULT_SCHEMA), customSections:[], students:[], ui:{currentId:null,sem:'全部'}};
 }
 function loadState(){
-  try{const s=JSON.parse(localStorage.getItem(LS_KEY));
-    if(s&&s.students){ // 補齊缺漏 schema
+  let s=null;
+  try{s=JSON.parse(localStorage.getItem(LS_KEY));}catch(e){}
+  // 初始空白狀態不應遮蔽班級備份；只有使用者明確清空時才保留空白狀態。
+  let explicitlyEmpty=false;try{explicitlyEmpty=localStorage.getItem(EMPTY_STATE_KEY)==='1';}catch(e){}
+  const hasSavedClass=s&&Array.isArray(s.students)&&(s.students.length>0||explicitlyEmpty);
+  let backups=[],activeBackup=null;
+  try{
+    const stored=JSON.parse(localStorage.getItem(CLASS_BACKUPS_KEY)||'[]');
+    backups=Array.isArray(stored)?stored:[];
+    const activeId=localStorage.getItem(ACTIVE_BACKUP_KEY);
+    activeBackup=backups.find(b=>b&&b.id===activeId&&b.data&&Array.isArray(b.data.students)&&b.data.schema)||null;
+  }catch(e){}
+  const newestBackup=activeBackup||backups.filter(b=>b&&b.data&&Array.isArray(b.data.students)&&b.data.schema)
+    .sort((a,b)=>Date.parse(b.savedAt||b.importedAt||0)-Date.parse(a.savedAt||a.importedAt||0))[0];
+  if(!hasSavedClass&&newestBackup){s=JSON.parse(JSON.stringify(newestBackup.data));try{localStorage.setItem(ACTIVE_BACKUP_KEY,newestBackup.id);}catch(e){}}
+  else if(hasSavedClass&&activeBackup&&activeBackup.className===(s.meta&&s.meta.className)&&
+      Date.parse(activeBackup.savedAt||activeBackup.importedAt||0)>Date.parse(s.meta&&s.meta.updatedAt||0)){
+    s=JSON.parse(JSON.stringify(activeBackup.data));
+  }
+  try{
+    if(s&&Array.isArray(s.students)){ // 補齊缺漏 schema
       s.schema=Object.assign(structuredClone(DEFAULT_SCHEMA),s.schema||{});
       normalizeSchema(s); // 重新套用版面旗標（fixed/narrow/noSemFilter）
       s.customSections=s.customSections||[];
@@ -416,14 +437,26 @@ function migrateGradeCols(s){
 }
 let saveT;
 function timeHM(){const d=new Date();return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');}
+function persistState(){
+  state.meta.updatedAt=new Date().toISOString();
+  if(state.students&&state.students.length)try{localStorage.removeItem(EMPTY_STATE_KEY);}catch(e){}
+  localStorage.setItem(LS_KEY,JSON.stringify(state));
+}
 function save(){
   const el=document.getElementById('saveStat'); if(el)el.textContent='儲存中…';
   clearTimeout(saveT);saveT=setTimeout(()=>{
-    state.meta.updatedAt=new Date().toISOString();
-    try{localStorage.setItem(LS_KEY,JSON.stringify(state)); if(el)el.textContent='已儲存 '+timeHM();}
+    saveT=null;
+    try{persistState(); if(el)el.textContent='已儲存 '+timeHM();}
     catch(e){ if(el)el.textContent='⚠ 未儲存，請備份'; toast('⚠ 儲存失敗（空間可能已滿）：'+e.message+'，請用「💾 備份班級」匯出 JSON 保存。');}
   },250);
 }
+// 關閉分頁或切換頁面時，立即完成尚在等待中的最後一次儲存。
+window.addEventListener('pagehide',()=>{
+  if(!saveT)return;
+  clearTimeout(saveT);saveT=null;
+  try{persistState();}
+  catch(e){console.error('離開頁面前儲存失敗：',e);}
+});
 
 function uid(){return 's'+Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
 
@@ -1068,6 +1101,7 @@ function addBlankStudent(){
 function confirmClearAll(){
   if(!confirm('確定清空全部學生資料？建議先「💾 備份班級」。此動作無法復原。'))return;
   if(!confirm('再次確認：真的要刪除所有學生？'))return;
+  try{localStorage.setItem(EMPTY_STATE_KEY,'1');}catch(e){}
   state=blankState();save();render();toast('已清空');
 }
 
@@ -1101,18 +1135,6 @@ function openImport(){
   </div></div>`;
   $('#modalRoot').innerHTML=html;
 }
-function showImportSetup(title,bodyHtml,extraFoot=''){
-  $('#modalRoot').innerHTML=`<div class="modal-bg" onclick="if(event.target===this)closeModal()"><div class="modal import-modal">
-    <h3>${title}<span class="x" onclick="closeModal()">×</span></h3>
-    <div class="mbody">${bodyHtml}</div>
-    <div class="mfoot">
-      <button class="btn" onclick="openImport()">← 重新選擇資料類型</button>
-      ${extraFoot}
-      <button class="btn" onclick="closeModal()">關閉</button>
-    </div>
-  </div></div>`;
-  const m=document.querySelector('.import-modal'); if(m)m.scrollTop=0;
-}
 function impCard(type,t,d){return `<div class="filedrop" onclick="pickImport('${type}')"><div style="font-weight:700;font-size:13.5px">${t}</div><div class="hint" style="margin-top:4px">${d}</div></div>`;}
 function pickImport(type){
   const inp=document.createElement('input');inp.type='file';
@@ -1142,7 +1164,7 @@ function handleFile(type,file){
   const isCSV=/\.csv$/i.test(file.name);
   reader.onload=ev=>{
     try{
-      if(type==='json')return importJSON(ev.target.result);
+      if(type==='json')return importJSON(ev.target.result,file.name);
       if(type==='docx')return importDocx(ev.target.result,file.name);
       let wb;
       if(isCSV){ const ws=XLSX.utils.aoa_to_sheet(parseCSV(ev.target.result)); wb={SheetNames:['CSV'],Sheets:{CSV:ws}}; }
@@ -1169,52 +1191,13 @@ function importRoster(wb){
   let h=`<div class="ok">已讀取檔案，共 <b>${sheets.length}</b> 個分頁（班級）。請選擇要匯入的班級：</div>
     <div class="fld"><label>班級分頁</label><select id="rsSheet" onchange="rosterPreview()">${sheets.map(s=>`<option>${esc(s)}</option>`).join('')}</select></div>
     <div id="rsPrev" style="margin-top:10px"></div>`;
-  showImportSetup('📋 學生名冊匯入設定',h);
+  $('#impArea').innerHTML=h;
   rosterPreview();
 }
 function sheetToRows(ws){return XLSX.utils.sheet_to_json(ws,{header:1,defval:'',raw:false});}
 function guessCol(headers,keys){
   for(let i=0;i<headers.length;i++){const hh=String(headers[i]).trim();for(const k of keys)if(hh.includes(k))return i;}
   return -1;
-}
-function HNORM(s){return String(s||'').replace(/[\s\n　＿_\-－—:：;；,，.．、\/／\\|()（）\[\]【】「」『』]/g,'').toLowerCase();}
-function isStudentNameHeader(h){
-  h=HNORM(h);
-  return /^(學生)?姓名$|^學生名字$|^名字$|^姓名$|^學生$/.test(h);
-}
-function matchFieldTarget(h,fields,prefix){
-  const n=HNORM(h);
-  const candidates=[...new Set(fields||[])].map(f=>({f,n:HNORM(f)})).filter(x=>x.n.length>=2).sort((a,b)=>b.n.length-a.n.length);
-  for(const c of candidates){
-    if(n===c.n||n.includes(c.n)||c.n.includes(n))return prefix+c.f;
-  }
-  return '';
-}
-function matchTargetLabel(h,targets){
-  const n=HNORM(h);
-  const candidates=[];
-  for(const [value,label] of targets){
-    if(value==='__skip'||value==='__newfield')continue;
-    const raw=[label,value.includes(':')?value.split(':').slice(1).join(':'):value]
-      .map(x=>String(x||'').replace(/^★/,'').replace(/.*→/,'').replace(/（.*?）|\(.*?\)/g,''));
-    for(const r of raw){
-      const rn=HNORM(r);
-      if(rn.length>=2)candidates.push({value,n:rn});
-    }
-  }
-  candidates.sort((a,b)=>b.n.length-a.n.length);
-  for(const c of candidates){
-    if(n===c.n||n.includes(c.n)||c.n.includes(n))return c.value;
-  }
-  return '';
-}
-function uniqTargets(targets){
-  const seen=new Set(), out=[];
-  for(const t of targets){
-    if(seen.has(t[0]))continue;
-    seen.add(t[0]); out.push(t);
-  }
-  return out;
 }
 function rosterPreview(){
   const sheet=$('#rsSheet').value, ws=_rosterWB.Sheets[sheet];
@@ -1261,58 +1244,35 @@ function doImportRoster(hdrIdx){
 
 /* --- 自評批次 xlsx（14欄範例表） --- */
 let _selfData=null;
-function selfXlsxTarget(h){
-  if(isStudentNameHeader(h))return '__name';
-  const n=HNORM(h);
-  if(/座號|座位|學號/.test(n))return '__no';
-  if(/性別/.test(n))return '__gender';
-  let t=matchFieldTarget(h,state.schema.self.fields,'self:'); if(t)return t;
-  t=matchFieldTarget(h,state.schema.self.extra,'extra:'); if(t)return t;
-  if(/學校服務|服務學習/.test(n))return 'extra:學校服務';
-  if(/社團/.test(n))return 'extra:社團表現';
-  if(/學業成就|學業表現|成績/.test(n))return 'extra:學業表現';
-  if(/生活常規|生活表現/.test(n))return 'extra:生活常規';
-  if(/社會服務|志工/.test(n))return 'extra:社會服務';
-  if(/活動表演|表演/.test(n))return 'extra:活動表演';
-  if(/科學展覽|科展|競賽展覽/.test(n))return 'extra:科學展覽';
-  if(/校內.*其他|其他校內/.test(n))return 'extra:校內其他特殊表現';
-  if(/校外.*其他|其他校外/.test(n))return 'extra:校外其他特殊表現';
-  if(/備註|補充/.test(n))return 'extra:備註';
-  return '__skip';
-}
 function importSelfXlsx(wb){
   const ws=wb.Sheets[wb.SheetNames[0]];
   const data=XLSX.utils.sheet_to_json(ws,{defval:''});
   if(!data.length)return alert('找不到資料列。');
   _selfData=data;
-  showImportSetup('✍️ 自評批次匯入設定',`
+  $('#impArea').innerHTML=`
     <div class="ok">已讀取 <b>${data.length}</b> 筆自評資料（依姓名比對名冊）。</div>
     <div class="fld" style="margin:8px 0"><label>匯入到哪個學期（學生自評分六學期記錄）</label>
       <select id="sxSem">${SEMS.map(s=>`<option ${s===state.ui.sem&&state.ui.sem!=='全部'?'selected':''}>${s}</option>`).join('')}</select></div>
-    <button class="btn pri" onclick="doImportSelfXlsx()">✓ 開始匯入</button>`);
+    <button class="btn pri" onclick="doImportSelfXlsx()">✓ 開始匯入</button>`;
 }
 function doImportSelfXlsx(){
   const sem=$('#sxSem').value, data=_selfData;
-  const headers=Object.keys(data[0]||{});
-  const targetMap=headers.map(h=>selfXlsxTarget(h));
-  const nameIdx=targetMap.indexOf('__name'), noIdx=targetMap.indexOf('__no'), genderIdx=targetMap.indexOf('__gender');
-  if(nameIdx<0)return alert('請先確認檔案中有「姓名」欄位。');
+  const map={'學校服務':'學校服務','社團表現':'社團表現','學業表現':'學業表現','生活常規':'生活常規',
+    '校內其他特殊表現':'校內其他特殊表現','社會服務':'社會服務','活動表演':'活動表演','科學展覽':'科學展覽',
+    '校外其他特殊表現':'校外其他特殊表現','備註':'備註'};
   let matched=0,unmatched=[];
   for(const row of data){
-    const name=String(row[headers[nameIdx]]||'').trim();
+    const name=String(row['學生姓名']||row['姓名']||'').trim();
     if(!name)continue;
-    let s=findStu(name,noIdx>=0?row[headers[noIdx]]:'');
+    let s=findStu(name,row['座號']);
     if(!s){unmatched.push(name);continue;}
     ensureStudentShape(s);
-    if(genderIdx>=0&&row[headers[genderIdx]]&&!s.gender)s.gender=String(row[headers[genderIdx]]).trim();
+    if(row['性別']&&!s.gender)s.gender=String(row['性別']).trim();
     const b=selfBucket(s,sem);
-    headers.forEach((h,i)=>{
-      const target=targetMap[i], v=String(row[h]||'').trim();
-      if(!v||target.startsWith('__'))return;
-      const [kind,key]=target.split(':');
-      if(kind==='self')b[key]=mergeText(b[key],v);
-      else if(kind==='extra'){ensureExtra(key);b._extra[key]=mergeText(b._extra[key],v);}
-    });
+    for(const [col,target] of Object.entries(map)){
+      const v=String(row[col]||'').trim();
+      if(v){ensureExtra(target);b._extra[target]=mergeText(b._extra[target],v);}
+    }
     matched++;
   }
   save();render();closeModal();
@@ -1335,21 +1295,10 @@ const FORM_TARGETS=[
   ['extra:校外其他特殊表現','補充→校外其他特殊表現'],['extra:研習聽講','補充→研習聽講'],['extra:其他表現','補充→其他表現'],
   ['__skip','— 不匯入 —']
 ];
-function formTargets(){
-  return uniqTargets([
-    ['__name','★姓名（比對用）'],['__no','座號（比對用）'],['__gender','性別'],
-    ...(state.schema.duty.cols||[]).map(c=>['duty:'+c,'職位→'+c]),
-    ...(state.schema.self.fields||[]).map(f=>['self:'+f,'自評→'+f]),
-    ...(state.schema.self.extra||[]).map(f=>['extra:'+f,'補充→'+f]),
-    ...FORM_TARGETS
-  ]);
-}
 function guessFormTarget(h){
-  const targets=formTargets();
-  const direct=matchTargetLabel(h,targets); if(direct)return direct;
   h=String(h).replace(/\s/g,'');
   const rules=[
-    [/(學生)?姓名|學生名字|^學生$|^姓名$|名字/,'__name'],[/座號|座位|學號/,'__no'],[/性別/,'__gender'],
+    [/姓名|學生|名字/,'__name'],[/座號/,'__no'],[/性別/,'__gender'],
     [/擔任幹部|幹部/,'duty:幹部'],[/小老師/,'duty:小老師'],
     [/性情/,'self:性情'],[/向學/,'self:向學'],[/進取/,'self:進取'],[/紀律/,'self:紀律'],
     [/交友/,'self:交友'],[/服務描述/,'self:服務'],[/擅長/,'self:擅長'],[/個性/,'self:個性'],
@@ -1366,20 +1315,19 @@ function importForm(wb){
   const data=XLSX.utils.sheet_to_json(ws,{defval:''});
   if(!data.length)return alert('找不到資料列。');
   _formData=data;_formHeaders=Object.keys(data[0]);
-  const targets=formTargets();
   let rowsHtml=_formHeaders.map((h,i)=>{
     const g=guessFormTarget(h);
     return `<tr><td>${esc(h)}</td><td>
-      <select id="fm_${i}">${targets.map(([v,l])=>`<option value="${v}" ${v===g?'selected':''}>${l}</option>`).join('')}</select>
+      <select id="fm_${i}">${FORM_TARGETS.map(([v,l])=>`<option value="${v}" ${v===g?'selected':''}>${l}</option>`).join('')}</select>
     </td></tr>`;
   }).join('');
-  showImportSetup('📊 Google 問卷匯入設定',`
+  $('#impArea').innerHTML=`
     <div class="ok">已讀取 <b>${data.length}</b> 筆問卷回應。系統已自動猜測欄位對應，請確認或調整：</div>
     <div class="fld" style="margin:8px 0"><label>套用到哪個學期（幹部/補充等需要學期的欄位）</label>
       <select id="fmSem">${SEMS.map(s=>`<option ${s===state.ui.sem&&state.ui.sem!=='全部'?'selected':''}>${s}</option>`).join('')}</select></div>
     <table><thead><tr><th>問卷欄位</th><th>對應到系統</th></tr></thead><tbody>${rowsHtml}</tbody></table>
     <div class="note">姓名欄位務必正確設定，系統依姓名比對名冊學生。</div>
-    <button class="btn pri" onclick="doImportForm()">✓ 開始匯入</button>`);
+    <button class="btn pri" onclick="doImportForm()">✓ 開始匯入</button>`;
 }
 function doImportForm(){
   const sem=$('#fmSem').value;
@@ -1431,24 +1379,13 @@ function buildMapTable(headers,targets,guessFn,idPrefix){
 /* --- 全班基本資料 Excel / CSV（自動找表頭，支援通訊錄格式與監護人依關係分父/母） --- */
 let _basicAOA=null,_basicCols=null; // _basicCols: [{i, name}]
 const BASIC_FIELDS=['手機','住址','身分證字號','生日','畢業學校','備註','父姓名','父手機','母姓名','母手機'];
-function basicFields(){
-  return [...new Set([...(state.schema.basic.fields||[]),...BASIC_FIELDS,'住家電話'])];
-}
-function basicTargets(){
-  return uniqTargets([
-    ['__name','★姓名（比對）'],['__no','座號（比對）'],['__gender','性別'],
-    ['__guardian','監護人姓名（依關係自動分父/母）'],['__guardianphone','監護人電話（依關係自動分父/母）'],['__relation','關係（判別父/母用）'],
-    ...basicFields().map(f=>['basic:'+f,'基本資料→'+f]),
-    ['__newfield','＋ 以此欄標題新增欄位'],['__skip','— 不匯入 —']
-  ]);
-}
 function guessBasicTarget(h){
   h=GNORM(h);
   if(/監護人行動電話|監護人手機|監護人.*行動|監護人.*電話|家長.*電話|家長.*手機/.test(h))return '__guardianphone';
   if(/監護人|家長姓名|家長$/.test(h))return '__guardian';
   if(/關係/.test(h))return '__relation';
-  if(/座號|座位|學號/.test(h))return '__no';
-  if(isStudentNameHeader(h)&&!/監護|家長|父|母/.test(h))return '__name';
+  if(/座號/.test(h))return '__no';
+  if(/姓名|學生|名字/.test(h)&&!/監護|家長|父|母/.test(h))return '__name';
   if(/性別/.test(h))return '__gender';
   if(/父/.test(h))return /電話|手機|行動/.test(h)?'basic:父手機':'basic:父姓名';
   if(/母/.test(h))return /電話|手機|行動/.test(h)?'basic:母手機':'basic:母姓名';
@@ -1458,9 +1395,9 @@ function guessBasicTarget(h){
   if(/身分證|身份證/.test(h))return 'basic:身分證字號';
   if(/生日|出生/.test(h))return 'basic:生日';
   if(/畢業|國中|原校/.test(h))return 'basic:畢業學校';
-  if(/學生手機|本人手機|個人手機|行動電話|手機|行動/.test(h))return 'basic:手機';
+  if(/手機|行動/.test(h))return 'basic:手機';
   if(/備註/.test(h))return 'basic:備註';
-  const direct=matchFieldTarget(h,basicFields(),'basic:'); if(direct)return direct;
+  for(const f of BASIC_FIELDS) if(h.includes(f))return 'basic:'+f;
   return '__skip';
 }
 // 依中文名字常見用字，推測監護人性別（F女/M男/?不確定）
@@ -1485,14 +1422,17 @@ function importBasicXlsx(wb){
   _basicAOA={aoa,HR}; _basicCols=cols;
   const nameCol=cols.find(c=>/姓名/.test(c.name)&&!/監護|家長/.test(c.name));
   const cnt=aoa.slice(HR+1).filter(r=>nameCol&&String(r[nameCol.i]||'').trim()).length;
-  const targets=basicTargets();
+  const targets=[['__name','★姓名（比對）'],['__no','座號（比對）'],['__gender','性別'],
+    ['__guardian','監護人姓名（依關係自動分父/母）'],['__guardianphone','監護人電話（依關係自動分父/母）'],['__relation','關係（判別父/母用）'],
+    ...BASIC_FIELDS.map(f=>['basic:'+f,'基本資料→'+f]),['basic:住家電話','基本資料→住家電話'],
+    ['__newfield','＋ 以此欄標題新增欄位'],['__skip','— 不匯入 —']];
   const rowsHtml=cols.map((c,idx)=>{ const g=guessBasicTarget(c.name);
     return `<tr><td>${esc(c.name)}</td><td><select id="bm_${idx}">${targets.map(([v,l])=>`<option value="${v}" ${v===g?'selected':''}>${l}</option>`).join('')}</select></td></tr>`; }).join('');
-  showImportSetup('📇 全班基本資料匯入設定',`
+  $('#impArea').innerHTML=`
     <div class="ok">已讀取基本資料，偵測 <b>${cnt}</b> 位學生（表頭位於第 ${HR+1} 列）。系統已自動猜測欄位對應：</div>
     <table><thead><tr><th>Excel/CSV 欄位</th><th>對應到系統</th></tr></thead><tbody>${rowsHtml}</tbody></table>
     <div class="note">支援 .xlsx / .xls / .csv。依姓名比對名冊學生，名冊沒有的會自動新增。<b>監護人</b>姓名/電話：有「關係」欄則依父/母填入；無關係欄時，系統會依監護人姓名文字意義自動判斷父或母（不確定預設父）。匯入後可在欄位內手動修正。</div>
-    <button class="btn pri" onclick="doImportBasic()">✓ 開始匯入</button>`);
+    <button class="btn pri" onclick="doImportBasic()">✓ 開始匯入</button>`;
 }
 function doImportBasic(){
   const {aoa,HR}=_basicAOA, cols=_basicCols;
@@ -1549,18 +1489,10 @@ let _pcData=null,_pcHeaders=null;
 const PC_TARGETS=[['__name','★姓名（比對）'],['__no','座號（比對）'],
   ['評語代號','導師評語→評語代號'],['文字描述評語','導師評語→文字描述評語'],['日常表現','導師評語→日常表現'],
   ['特殊表現','導師評語→特殊表現'],['__skip','— 不匯入 —']];
-function pcTargets(){
-  return uniqTargets([
-    ['__name','★姓名（比對）'],['__no','座號（比對）'],
-    ...(state.schema.teacher.cols||[]).map(c=>[c,'導師評語→'+c]),
-    ...PC_TARGETS
-  ]);
-}
 function guessPCTarget(h){
-  const direct=matchTargetLabel(h,pcTargets()); if(direct)return direct;
   h=String(h).replace(/\s/g,'');
-  if(/(學生)?姓名|學生名字|^學生$|^姓名$|名字/.test(h))return '__name';
-  if(/座號|座位|學號/.test(h))return '__no';
+  if(/姓名|學生|名字/.test(h))return '__name';
+  if(/座號/.test(h))return '__no';
   if(/電子郵件|email|時間戳記|timestamp/i.test(h))return '__skip';
   if(/代號|代碼/.test(h))return '評語代號';
   // 性情/向學/進取/紀律/交友/服務/擅長 各描述（含號碼）→ 評語代號
@@ -1574,15 +1506,14 @@ function importPrevComment(wb){
   const data=XLSX.utils.sheet_to_json(ws,{defval:''});
   if(!data.length)return alert('找不到資料列。');
   _pcData=data;_pcHeaders=Object.keys(data[0]);
-  const targets=pcTargets();
-  showImportSetup('✒️ 之前導師評語匯入設定',`
+  $('#impArea').innerHTML=`
     <div class="ok">已讀取 <b>${data.length}</b> 筆。將寫入「導師評語（二）」表格。多個欄位對應同一目標時會以頓號合併。</div>
     <div class="fld" style="margin:8px 0"><label>匯入到哪個學期</label>
       <select id="pcSem">${SEMS.map(s=>`<option ${s===state.ui.sem&&state.ui.sem!=='全部'?'selected':''}>${s}</option>`).join('')}</select></div>
-    <table><thead><tr><th>Excel 欄位</th><th>對應到導師評語</th></tr></thead><tbody>${buildMapTable(_pcHeaders,targets,guessPCTarget,'pc_')}</tbody></table>
+    <table><thead><tr><th>Excel 欄位</th><th>對應到導師評語</th></tr></thead><tbody>${buildMapTable(_pcHeaders,PC_TARGETS,guessPCTarget,'pc_')}</tbody></table>
     <div class="note">依姓名比對名冊學生。性情/向學/進取等各描述預設合併為「文字描述評語」，可自行調整。</div>
     <label class="hint"><input type="checkbox" id="pcAppend" checked> 與既有內容合併（取消則覆蓋）</label><br>
-    <button class="btn pri" style="margin-top:10px" onclick="doImportPC()">✓ 開始匯入</button>`);
+    <button class="btn pri" style="margin-top:10px" onclick="doImportPC()">✓ 開始匯入</button>`;
 }
 function doImportPC(){
   const sem=$('#pcSem').value, append=$('#pcAppend').checked;
@@ -1639,14 +1570,14 @@ function importGrade(wb){
   hdr.forEach((h,i)=>{ if(h&&!META.test(h)&&i!==cols.no&&i!==cols.name)cols.subj.push([i,h]); });
   _gradeAOA={aoa,HR}; _gradeCols=cols;
   const cnt=aoa.slice(HR+1).filter(r=>String(r[cols.name]||'').trim()).length;
-  showImportSetup('📈 段考成績匯入設定',`
+  $('#impArea').innerHTML=`
     <div class="ok">已讀取段考成績，偵測 <b>${cnt}</b> 位學生。科目：${cols.subj.map(s=>s[1]).join('、')||'（未偵測，請確認檔案）'}</div>
     <div style="display:flex;gap:10px;flex-wrap:wrap">
       <div class="fld" style="flex:1"><label>匯入到哪個學期</label><select id="grSem">${SEMS.map(s=>`<option ${s===state.ui.sem&&state.ui.sem!=='全部'?'selected':''}>${s}</option>`).join('')}</select></div>
       <div class="fld" style="flex:1"><label>哪一次考試</label><select id="grExam"><option>一段考</option><option>二段考</option><option>期末考</option></select></div>
     </div>
     <div class="note">較強科目＝該科 80 分(含)以上；較弱科目＝不及格（分數前有 #）。班排取「班級名次」、類組排取「類組名次（百分）」。同學期多次考試的相同科目會去重並標註出現次數，例如「數學(2)」。</div>
-    <button class="btn pri" onclick="doImportGrade()">✓ 開始匯入</button>`);
+    <button class="btn pri" onclick="doImportGrade()">✓ 開始匯入</button>`;
 }
 function doImportGrade(){
   const sem=$('#grSem').value, exam=$('#grExam').value;
@@ -1703,11 +1634,11 @@ function importMock(wb){
   map.ban=gl>=0?findRank(gl,'班級'):-1; map.sch=gl>=0?findRank(gl,'學校'):-1; map.all=gl>=0?findRank(gl,'全體'):-1;
   _mockAOA={aoa,HR}; _mockMap=map;
   const cnt=aoa.slice(HR+1).filter(r=>String(r[map.name]||'').trim()&&/\d/.test(String(r[map.no]||''))).length;
-  showImportSetup('🎓 學測模擬考匯入設定',`
+  $('#impArea').innerHTML=`
     <div class="ok">已讀取模考成績，偵測 <b>${cnt}</b> 位學生。科目級分：${Object.keys(map.subj).join('、')||'（未偵測）'}</div>
     <div class="fld" style="margin:8px 0"><label>匯入到哪一次模考</label><select id="mkRow">${state.schema.mock.rows.map(r=>`<option>${r}</option>`).join('')}</select></div>
     <div class="note">寫入「學測模擬考」表格：各科級分、總級分、總分，以及班／校／全體排名（取總級分排名）。依姓名座號比對。</div>
-    <button class="btn pri" onclick="doImportMock()">✓ 開始匯入</button>`);
+    <button class="btn pri" onclick="doImportMock()">✓ 開始匯入</button>`;
 }
 function doImportMock(){
   const row=$('#mkRow').value, {aoa,HR}=_mockAOA, m=_mockMap;
@@ -1732,18 +1663,10 @@ function doImportMock(){
 let _clubData=null,_clubHeaders=null;
 const CLUB_TARGETS=[['__name','★姓名（比對）'],['__no','座號（比對）'],
   ['社團','社團'],['職稱','職稱'],['社團表現與活動','社團表現與活動'],['__skip','— 不匯入 —']];
-function clubTargets(){
-  return uniqTargets([
-    ['__name','★姓名（比對）'],['__no','座號（比對）'],
-    ...(state.schema.club.cols||[]).map(c=>[c,'社團活動→'+c]),
-    ...CLUB_TARGETS
-  ]);
-}
 function guessClubTarget(h){
-  const direct=matchTargetLabel(h,clubTargets()); if(direct)return direct;
   h=GNORM(h);
-  if(/(學生)?姓名|學生名字|^學生$|^姓名$|名字/.test(h))return '__name';
-  if(/座號|座位|學號/.test(h))return '__no';
+  if(/姓名|學生|名字/.test(h))return '__name';
+  if(/座號/.test(h))return '__no';
   if(/職稱|職務|擔任|幹部|社長|股長|身份|身分/.test(h))return '職稱';
   if(/表現|活動|成果|事蹟|說明|心得|描述|參與/.test(h))return '社團表現與活動';
   if(/社團/.test(h))return '社團';
@@ -1754,14 +1677,13 @@ function importClub(wb){
   const data=XLSX.utils.sheet_to_json(ws,{defval:''});
   if(!data.length)return alert('找不到資料列。');
   _clubData=data;_clubHeaders=Object.keys(data[0]);
-  const targets=clubTargets();
-  showImportSetup('🎭 社團資料匯入設定',`
+  $('#impArea').innerHTML=`
     <div class="ok">已讀取 <b>${data.length}</b> 筆社團資料。系統已自動猜測欄位對應：</div>
     <div class="fld" style="margin:8px 0"><label>匯入到哪個學期</label>
       <select id="clSem">${SEMS.map(s=>`<option ${s===state.ui.sem&&state.ui.sem!=='全部'?'selected':''}>${s}</option>`).join('')}</select></div>
-    <table><thead><tr><th>Excel 欄位</th><th>對應到「七、社團活動」</th></tr></thead><tbody>${buildMapTable(_clubHeaders,targets,guessClubTarget,'cl_')}</tbody></table>
+    <table><thead><tr><th>Excel 欄位</th><th>對應到「七、社團活動」</th></tr></thead><tbody>${buildMapTable(_clubHeaders,CLUB_TARGETS,guessClubTarget,'cl_')}</tbody></table>
     <div class="note">依姓名比對名冊學生，寫入指定學期的社團／職稱／社團表現與活動。</div>
-    <button class="btn pri" onclick="doImportClub()">✓ 開始匯入</button>`);
+    <button class="btn pri" onclick="doImportClub()">✓ 開始匯入</button>`;
 }
 function doImportClub(){
   const sem=$('#clSem').value;
@@ -1815,13 +1737,13 @@ function importDocx(arrayBuffer,fname){
 function showDocxConfirm(name,no,grabbed,fname){
   const got=Object.keys(grabbed);
   const candidates=state.students.map(s=>`<option value="${s.id}" ${s.name===name?'selected':''}>${esc(s.no)} ${esc(s.name)}</option>`).join('');
-  showImportSetup('📄 個別學生自評匯入設定',`
+  $('#impArea').innerHTML=`
     <div class="ok">已解析 <b>${esc(fname)}</b>。偵測姓名：<b>${esc(name||'（未偵測）')}</b>　座號：<b>${esc(no||'—')}</b></div>
     <div class="fld"><label>匯入到哪位學生</label><select id="dxStu">${candidates||'<option value="">（名冊尚無學生）</option>'}</select></div>
     <div class="fld" style="margin-top:6px"><label>匯入到哪個學期</label><select id="dxSem">${SEMS.map(s=>`<option ${s===state.ui.sem&&state.ui.sem!=='全部'?'selected':''}>${s}</option>`).join('')}</select></div>
     <div class="hint" style="margin:8px 0 4px">擷取到的自評內容（${got.length} 項）：</div>
     <div class="chiplist">${got.length?got.map(f=>`<span class="chip">${f}：${esc(grabbed[f].slice(0,14))}…</span>`).join(''):'<span class="hint">未擷取到結構化內容，可改用批次 Excel 匯入。</span>'}</div>
-    <button class="btn pri" style="margin-top:12px" ${got.length?'':'disabled'} onclick='applyDocx(${JSON.stringify(grabbed).replace(/'/g,"&#39;")})'>✓ 匯入此學生</button>`);
+    <button class="btn pri" style="margin-top:12px" ${got.length?'':'disabled'} onclick='applyDocx(${JSON.stringify(grabbed).replace(/'/g,"&#39;")})'>✓ 匯入此學生</button>`;
 }
 function applyDocx(grabbed){
   const id=$('#dxStu').value;const s=byId(id);
@@ -1833,14 +1755,101 @@ function applyDocx(grabbed){
   save();render();closeModal();toast('✓ 已匯入 '+s.name+'（'+sem+'）的自評');
 }
 
-/* --- JSON 還原 --- */
-function importJSON(txt){
+/* --- 班級備份庫：匯入的整班 JSON 保存於本機瀏覽器，可預覽並重複還原 --- */
+function getClassBackups(){
+  try{const x=JSON.parse(localStorage.getItem(CLASS_BACKUPS_KEY)||'[]');return Array.isArray(x)?x:[];}
+  catch(e){return [];}
+}
+function storeClassBackup(obj,fileName='班級備份.json'){
+  const backups=getClassBackups();
+  const copy=JSON.parse(JSON.stringify(obj));
+  const entry={id:'b'+Date.now().toString(36)+Math.random().toString(36).slice(2,7),
+    importedAt:new Date().toISOString(),savedAt:new Date().toISOString(),fileName:String(fileName||'班級備份.json'),
+    className:copy.meta&&copy.meta.className||'未命名班級',teacher:copy.meta&&copy.meta.teacher||'',
+    studentCount:copy.students.length,data:copy};
+  try{backups.unshift(entry);localStorage.setItem(CLASS_BACKUPS_KEY,JSON.stringify(backups));return entry;}
+  catch(e){toast('⚠ 備份庫儲存失敗（瀏覽器空間可能已滿）：'+e.message);return null;}
+}
+function saveCurrentClassToBackup(){
+  clearTimeout(saveT);saveT=null;
+  let activeSaved=true;
+  try{persistState();const el=document.getElementById('saveStat');if(el)el.textContent='已儲存 '+timeHM();}
+  catch(e){activeSaved=false;}
+  const now=new Date().toISOString();
+  const className=(state.meta.className||'未命名班級').trim();
+  const teacher=(state.meta.teacher||'').trim();
+  let backups=getClassBackups();
+  let activeId='';try{activeId=localStorage.getItem(ACTIVE_BACKUP_KEY)||'';}catch(e){}
+  let index=backups.findIndex(b=>b&&b.id===activeId);
+  if(index<0)index=backups.findIndex(b=>b&&b.className===className&&(b.teacher||'')===teacher);
+  const snapshot=JSON.parse(JSON.stringify(state));
+  let id;
+  if(index>=0){
+    const old=backups[index];id=old.id;
+    backups[index]={...old,className,teacher,studentCount:snapshot.students.length,savedAt:now,data:snapshot};
+  }else{
+    id='b'+Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+    backups.push({id,importedAt:now,savedAt:now,fileName:'系統儲存',className,teacher,studentCount:snapshot.students.length,data:snapshot});
+  }
+  backups.sort((a,b)=>Date.parse(b.savedAt||b.importedAt||0)-Date.parse(a.savedAt||a.importedAt||0));
+  try{
+    localStorage.setItem(CLASS_BACKUPS_KEY,JSON.stringify(backups));
+    localStorage.setItem(ACTIVE_BACKUP_KEY,id);
+    toast(`✓「${className}」最新資料已存入班級資料庫`);
+  }catch(e){toast('⚠ 班級資料庫儲存失敗（瀏覽器空間可能已滿）：'+e.message);}
+  if(!activeSaved)console.error('目前班級資料未能寫入一般瀏覽器儲存區，請確認班級備份庫儲存結果。');
+}
+function openClassBackupLibrary(selectedId=''){
+  const backups=getClassBackups().sort((a,b)=>Date.parse(b.savedAt||b.importedAt||0)-Date.parse(a.savedAt||a.importedAt||0));
+  const cards=backups.map(b=>{
+    const students=Array.isArray(b.data&&b.data.students)?b.data.students:[];
+    const names=students.map(s=>`${s.no||'—'} ${s.name||'未命名'}`).join('、');
+    const imported=b.importedAt?new Date(b.importedAt).toLocaleString():'時間未記錄';
+    const saved=b.savedAt?new Date(b.savedAt).toLocaleString():imported;
+    return `<section class="backup-card" id="backup_${esc(b.id)}">
+      <h4>${esc(b.className||'未命名班級')}</h4>
+      <div class="backup-meta">導師：${esc(b.teacher||'未填寫')}　｜　${students.length} 位學生<br>匯入時間：${esc(imported)}<br>最近儲存：${esc(saved)}<br>來源：${esc(b.fileName||'班級備份.json')}</div>
+      <details><summary style="cursor:pointer;margin-top:7px;color:var(--brand);font-size:12px">預覽學生名單</summary><div class="backup-students">${names?esc(names):'（此班級目前沒有學生資料）'}</div></details>
+      <div class="backup-actions"><button class="btn pri" onclick="restoreClassBackup('${esc(b.id)}')">↩ 恢復這個班級</button><button class="btn" onclick="removeClassBackup('${esc(b.id)}')">刪除此備份</button></div>
+    </section>`;
+  }).join('');
+  $('#modalRoot').innerHTML=`<div class="modal-bg" onclick="if(event.target===this)closeModal()"><div class="modal">
+    <h3>📚 班級備份庫<span class="x" onclick="closeModal()">×</span></h3>
+    <div class="mbody"><div class="note">備份保存在目前瀏覽器中。匯入整班 JSON 後會立即載入；之後可在這裡預覽班級與學生名單，並再次恢復。</div>
+    ${cards||'<div class="empty" style="padding:28px 10px">尚無整班備份。請先從「匯入資料」匯入班級 JSON。</div>'}</div>
+    <div class="mfoot"><button class="btn" onclick="closeModal()">關閉</button></div>
+  </div></div>`;
+  if(selectedId){const el=document.getElementById('backup_'+selectedId);if(el)el.scrollIntoView({block:'nearest'});}
+}
+function restoreClassBackup(id){
+  const entry=getClassBackups().find(b=>b.id===id);if(!entry)return alert('找不到這筆班級備份。');
+  const obj=JSON.parse(JSON.stringify(entry.data));
+  if(!Array.isArray(obj.students)||!obj.schema)return alert('這筆備份資料格式不完整，無法恢復。');
+  if(!confirm(`要恢復「${entry.className||'未命名班級'}」（${obj.students.length} 位學生）嗎？目前網頁中的班級資料會被取代。`))return false;
+  obj.schema=Object.assign(structuredClone(DEFAULT_SCHEMA),obj.schema||{});
+  obj.meta=obj.meta||{className:entry.className||'',teacher:entry.teacher||'',updatedAt:null};
+  obj.customSections=obj.customSections||[];
+  obj.ui=obj.ui||{currentId:null,sem:'全部'};
+  migrateTeacherCols(obj);migrateSelfSem(obj);migrateGradeCols(obj);reorderBasicFields(obj);
+  try{localStorage.removeItem(EMPTY_STATE_KEY);}catch(e){}
+  try{localStorage.setItem(ACTIVE_BACKUP_KEY,id);}catch(e){}
+  state=obj;save();render();closeModal();toast(`✓ 已恢復「${entry.className||'未命名班級'}」`);return true;
+}
+function removeClassBackup(id){
+  const entry=getClassBackups().find(b=>b.id===id);if(!entry)return;
+  if(!confirm(`確定刪除備份「${entry.className||'未命名班級'}」？此動作無法復原。`))return;
+  try{localStorage.setItem(CLASS_BACKUPS_KEY,JSON.stringify(getClassBackups().filter(b=>b.id!==id)));openClassBackupLibrary();toast('已刪除班級備份');}
+  catch(e){toast('⚠ 刪除失敗：'+e.message);}
+}
+
+/* --- JSON 匯入 --- */
+function importJSON(txt,fileName='班級備份.json'){
   let obj;try{obj=JSON.parse(txt);}catch(e){return alert('JSON 格式錯誤');}
-  if(obj && obj.students && obj.schema){ // 整班備份
-    if(!confirm(`將還原班級備份（${obj.students.length} 位學生），覆蓋目前資料？`))return;
-    obj.schema=Object.assign(structuredClone(DEFAULT_SCHEMA),obj.schema);
-    obj.ui=obj.ui||{currentId:null,sem:'全部'};
-    state=obj;save();render();closeModal();toast('✓ 班級備份已還原');
+  if(obj && Array.isArray(obj.students) && obj.schema){ // 整班備份存入備份庫，並設為目前班級
+    const entry=storeClassBackup(obj,fileName);
+    if(!entry)return;
+    closeModal();
+    if(!restoreClassBackup(entry.id))openClassBackupLibrary(entry.id);
   }else if(obj && obj.student){ // 單一學生
     const incoming=obj.student;
     let s=state.students.find(x=>x.name===incoming.name);
